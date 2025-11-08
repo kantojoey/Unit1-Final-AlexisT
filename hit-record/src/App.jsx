@@ -11,6 +11,7 @@ import ProfilePage from './components/pages/ProfilePage'
 import BottomNavBar from './components/common/BottomNavBar'
 import Footer from './components/common/Footer'
 import { useEffect, useState } from 'react'
+import ReviewPage from './components/pages/Search/ReviewPage'
 
 
 // API User ID and Key for access
@@ -52,6 +53,7 @@ const [accessToken, setAccessToken] = useState();
         <Route path = "/listening-log" element = {<ListeningLogPage />}/>
         <Route path = "/about" element = {<AboutPage />}/>
         <Route path = "/search" element = {<SearchPage />}/>
+        <Route path = "/search/review" element = {<ReviewPage />}/>
         <Route path = "/profile" element = {<ProfilePage />}/>
         <Route path = "*" element = {<Navigate to = "/" />}/>
       </Routes>

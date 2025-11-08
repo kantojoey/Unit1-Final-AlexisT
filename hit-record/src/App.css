@@ -241,3 +241,26 @@ main {
   gap: 2rem; /* replaces space-evenly for better control */
   margin-top: 2vh;
 }
+
+.page-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.album-review-info {
+    text-align: center;
+}
+
+#rating {
+    background-color: rgb(253, 101, 0);
+}
+
+.review-input {
+    height: 45vh;
+    width: 45vw;
+    margin-bottom: 2vh;
+    vertical-align: top;
+    text-align: left;
+    font-size: 1.5rem;
+}
