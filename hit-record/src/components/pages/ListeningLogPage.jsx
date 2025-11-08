@@ -7,12 +7,12 @@ const ListeningLogPage = () => {
         <main>
             <h1><strong>My Listening Log</strong></h1>
             <section id="user-stats">
-                <div className="stat">
+                <Card className="listening-stat">
                     <h2>[# of logged albums]</h2>
-                </div>
-                <div className="stat">
+                </Card>
+                <Card className="listening-stat">
                     <h2>[avg rating]</h2>
-                </div>
+                </Card>
             </section>
             <AlbumShelf className="recently-listened">
                 <Card>
