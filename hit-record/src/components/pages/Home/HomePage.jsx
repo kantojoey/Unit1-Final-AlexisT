@@ -1,6 +1,6 @@
 import AlbumShelf from "../../common/AlbumShelf";
 import Card from "../../common/Card";
-import VinylRecord from "../images/VinylRecord.png"
+import VinylRecord from "../../images/VinylRecord.png"
 
 const HomePage = () => {
     return (

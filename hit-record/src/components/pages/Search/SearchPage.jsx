@@ -1,5 +1,5 @@
 import Card from "../../common/Card";
-import VinylRecord from "../images/VinylRecord.png"
+import VinylRecord from "../../images/VinylRecord.png"
 
 const SearchPage = () => {
     return (
