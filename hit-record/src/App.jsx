@@ -9,12 +9,14 @@ import SearchPage from './components/pages/SearchPage'
 function App() {
 
   return (
-    <>
+    <div id="body-container">
       <Header />
-      <SearchPage />
+      <main>
+        place
+      </main>
       <Footer />
 
-    </>
+    </div>
   )
 }
 
