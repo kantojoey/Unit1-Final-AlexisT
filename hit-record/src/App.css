@@ -153,12 +153,12 @@ main {
 
 .about-divider {
     display: flex;
-   justify-content: space-between;
-   align-items: center;
-   width: 100%;
-   min-height: 100vh;
-   /* padding: 2rem; */
-   box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    /* padding: 2rem; */
+    box-sizing: border-box;
 }
 
 .about-divider p {
@@ -201,4 +201,43 @@ main {
     padding: 10px 10px;
     width: 8rem;
     text-align: center;
+}
+
+.expanded-album-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rating-box {
+    font-size: 3vw;
+    border: 2px solid black;
+    padding: 0px 15px;
+}
+
+.album-details-expanded {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    border: 2px solid black;
+    margin: 0;
+    padding-left: 15px;
+    place-items: center;
+    flex: 1
+}
+
+.user-review {
+    flex: 1;
+    border: 2px solid black;
+    padding: 2vw
+}
+
+.review-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* replaces space-evenly for better control */
+  margin-top: 2vh;
 }
