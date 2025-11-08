@@ -1,0 +1,152 @@
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.header-text {
+    padding-top: 5px;
+    font-size: 50px;
+}
+
+.header-image {
+    width: 100px;
+    height: 100px;
+}
+
+header,
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(253, 101, 0);
+    color: black;
+    width: 100%;
+    padding: 15px clamp(20px, 4vw, 30px) 20px;
+}
+
+#body-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.spin {
+    animation: spin 2s linear infinite;
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-button {
+    background-color: yellow;
+    padding: 20px 20px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    width: 200px;
+}
+
+.album-shelf {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    border: 2px solid brown;
+    margin: 50px 50px;
+    padding-left: 15px;
+    place-items: center;
+}
+
+.placeholder {
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#user-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    place-items: center;
+}
+
+.stat {
+    border: 2px solid brown;
+    padding: 10px 10px;
+    width: 20rem;
+    text-align: center;
+}
+
+/* Fix this so it shows 5 per row on desktop and switches at breakpoints */
+.recently-listened {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    border: 2px solid brown;
+    margin: 50px 50px;
+    padding-left: 15px;
+    place-items: center;
+    width: 100%;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20vw;
+}
+
+.album-search {
+    width: 50vw;
+}
+
+.search-button {
+    width: 10vw;
+    background-color: rgb(253, 101, 0);
+    border: 2px solid black;
+    border-radius: 3px;
+    height: 50px;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20vw;
+}
+
+.add-album-button {
+    width: 10vw;
+    background-color: rgb(253, 101, 0);
+    border: 2px solid black;
+    border-radius: 3px;
+    height: 50px;
+    margin-right: 222px;
+}
