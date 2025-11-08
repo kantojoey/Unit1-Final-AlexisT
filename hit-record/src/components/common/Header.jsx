@@ -1,4 +1,4 @@
-import VinylRecord from "./images/VinylRecord.png"
+import VinylRecord from "../images/VinylRecord.png"
 const Header = () => {
     return (
         <>
