@@ -1,3 +1,4 @@
+import { Navigate, Route, Routes } from 'react-router'
 import './App.css'
 import Footer from './components/common/Footer'
 import Header from './components/common/Header'
@@ -11,9 +12,13 @@ function App() {
   return (
     <div id="body-container">
       <Header />
-      <main>
-        place
-      </main>
+      <Routes>
+        <Route path = "/" element = {<LoadingPage />}/>
+        <Route path = "/home" element = {<HomePage />}/>
+        <Route path = "listening-log" element = {<ListeningLogPage />}/>
+        <Route path = "search" element = {<SearchPage />}/>
+        <Route path = "*" element = {<Navigate to = "/" />}/>
+      </Routes>
       <Footer />
 
     </div>
