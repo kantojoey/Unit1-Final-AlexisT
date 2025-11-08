@@ -7,6 +7,7 @@ import ListeningLogPage from './components/pages/ListeningLogPage'
 import LoadingPage from './components/pages/LoadingPage'
 import SearchPage from './components/pages/SearchPage'
 import AboutPage from './components/pages/AboutPage'
+import BottomNavBar from './components/common/BottomNavBar'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path = "/search" element = {<SearchPage />}/>
         <Route path = "*" element = {<Navigate to = "/" />}/>
       </Routes>
+      <BottomNavBar />
       <Footer />
 
     </div>
