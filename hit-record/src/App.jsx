@@ -6,6 +6,7 @@ import HomePage from './components/pages/HomePage'
 import ListeningLogPage from './components/pages/ListeningLogPage'
 import LoadingPage from './components/pages/LoadingPage'
 import SearchPage from './components/pages/SearchPage'
+import AboutPage from './components/pages/AboutPage'
 
 function App() {
 
@@ -15,8 +16,9 @@ function App() {
       <Routes>
         <Route path = "/" element = {<LoadingPage />}/>
         <Route path = "/home" element = {<HomePage />}/>
-        <Route path = "listening-log" element = {<ListeningLogPage />}/>
-        <Route path = "search" element = {<SearchPage />}/>
+        <Route path = "/listening-log" element = {<ListeningLogPage />}/>
+        <Route path = "/about" element = {<AboutPage />}/>
+        <Route path = "/search" element = {<SearchPage />}/>
         <Route path = "*" element = {<Navigate to = "/" />}/>
       </Routes>
       <Footer />
