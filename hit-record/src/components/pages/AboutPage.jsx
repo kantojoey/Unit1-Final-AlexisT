@@ -4,7 +4,7 @@ const AboutPage = () => {
     return (
         <main>
             <section className="about-divider">
-                <div className="about-image-heading">
+                <div className="about-section-heading-and-image">
                     <h2>About Hit Record</h2>
                     <img src={VinylRecord} className="album-artwork"></img>
                 </div>

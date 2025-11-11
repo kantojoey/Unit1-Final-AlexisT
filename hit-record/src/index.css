@@ -140,6 +140,42 @@ main {
 /* About Page */
 /* ----------------------------- */
 
+.about-divider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.about-section-heading-and-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-divider p {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding-right: 2rem;
+}
+
+/* @media (max-width: 768px) {
+    .about-divider {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-divider p {
+        padding-right: 0;
+    }
+} */
+ 
 /* Search Page */
 /* ----------------------------- */
 
@@ -182,30 +218,8 @@ main {
     margin-right: 222px;
 }
 
-.about-divider {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    /* padding: 2rem; */
-    box-sizing: border-box;
-}
 
-.about-divider p {
-    flex: 1;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    padding-right: 2rem;
-}
 
-.about-image-heading {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
 
 .profile-pic {
     width: 200px;
