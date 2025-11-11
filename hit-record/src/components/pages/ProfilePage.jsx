@@ -19,16 +19,16 @@ const ProfilePage = () => {
                 <h2><strong>My Favorites:</strong></h2>
                 <AlbumShelf>
                     <Card>
-                        <img src={VinylRecord} className="placeholder"></img>
+                        <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
                     <Card>
-                        <img src={VinylRecord} className="placeholder"></img>
+                        <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
                     <Card>
-                        <img src={VinylRecord} className="placeholder"></img>
+                        <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
                     <Card>
-                        <img src={VinylRecord} className="placeholder"></img>
+                        <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
                 </AlbumShelf>
             </div>
