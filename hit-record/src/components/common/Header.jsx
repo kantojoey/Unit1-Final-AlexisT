@@ -1,11 +1,12 @@
-import VinylRecord from "../images/VinylRecord.png"
+import { BsVinylFill } from "react-icons/bs";
+
 const Header = () => {
     return (
         <>
             <header>
                 <div className="header-content">
+                    <BsVinylFill className="record-icon"/>
                     <h1 className = "header-text">Hit Record</h1>
-                    <img src={VinylRecord} className="header-image"></img>
                 </div>
             </header>
 
