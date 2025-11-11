@@ -64,7 +64,7 @@ footer {
 
 /* Album Shelf */
 /* ----------------------------- */
-.album-shelf-default-styles {
+/* .album-shelf-default-styles {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
@@ -72,7 +72,19 @@ footer {
     margin: 50px 50px;
     padding-left: 15px;
     place-items: center;
+} */
+ .album-shelf-default-styles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;   /* centers cards in their columns */
+  align-items: start;      /* keeps vertical alignment consistent */
+  gap: 1rem;
+  border: 0.2rem solid rgb(192 132 252);
+  margin: 50px 50px;
+  padding: 1rem;           /* uniform inner padding */
+  box-sizing: border-box;
 }
+
 
 /* Card */
 .card-default-styles {

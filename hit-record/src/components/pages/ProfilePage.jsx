@@ -18,16 +18,16 @@ const ProfilePage = () => {
             <div className="favorite-section">
                 <h2><strong>My Favorites:</strong></h2>
                 <AlbumShelf>
-                    <Card>
+                    <Card className="album-card">
                         <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
-                    <Card>
+                    <Card className="album-card">
                         <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
-                    <Card>
+                    <Card className="album-card">
                         <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
-                    <Card>
+                    <Card className="album-card">
                         <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
                 </AlbumShelf>
