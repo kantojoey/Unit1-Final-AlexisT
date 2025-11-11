@@ -15,20 +15,20 @@ const ListeningLogPage = () => {
                 </Card>
             </section>
             <AlbumShelf className="recently-listened">
-                <Card>
-                    <img src={VinylRecord} className="placeholder"></img>
+                <Card className="album-card">
+                    <img src={VinylRecord} className="album-artwork"></img>
                 </Card>
-                <Card>
-                    <img src={VinylRecord} className="placeholder"></img>
+                <Card className="album-card">
+                    <img src={VinylRecord} className="album-artwork"></img>
                 </Card>
-                <Card>
-                    <img src={VinylRecord} className="placeholder"></img>
+                <Card className="album-card">
+                    <img src={VinylRecord} className="album-artwork"></img>
                 </Card>
-                <Card>
-                    <img src={VinylRecord} className="placeholder"></img>
+                <Card className="album-card">
+                    <img src={VinylRecord} className="album-artwork"></img>
                 </Card>
-                <Card>
-                    <img src={VinylRecord} className="placeholder"></img>
+                <Card className="album-card">
+                    <img src={VinylRecord} className="album-artwork"></img>
                 </Card>
             </AlbumShelf>
         </main>

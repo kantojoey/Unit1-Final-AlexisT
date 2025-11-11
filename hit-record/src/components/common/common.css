@@ -1,4 +1,5 @@
 /* Navigation Bar */
+/* ----------------------------- */
 
 .bottom-nav {
     width: 100%;
@@ -22,6 +23,7 @@
 }
 
 /* Header and Footer*/
+/* ----------------------------- */
 
 .record-icon {
     font-size: 4rem;
@@ -54,3 +56,22 @@ footer {
     width: 100%;
     /* padding: 15px clamp(20px, 4vw, 30px) 20px; */
 }
+
+/* Album Shelf */
+/* ----------------------------- */
+.album-shelf {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    border: 0.1rem solid rgb(192 132 252);
+    margin: 50px 50px;
+    padding-left: 15px;
+    place-items: center;
+}
+
+/* Card */
+.card-default-styles {
+    border: 0.1rem solid rgb(192 132 252);
+}
+
+/* Button */

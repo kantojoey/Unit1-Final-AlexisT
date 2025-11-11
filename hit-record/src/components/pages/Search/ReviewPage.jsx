@@ -11,7 +11,7 @@ const ReviewPage = () => {
             <div className="page-container">
                 <div className="album-review-info">
                     <Card>
-                        <img src={VinylRecord} className="placeholder"></img>
+                        <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
                     <h4>Title</h4>
                     <h4>Artist</h4>
@@ -31,7 +31,7 @@ const ReviewPage = () => {
                     </div>
                     <div className="review-entry">
                         <h2>Review:</h2>
-                        <input className="review-input" type="text" placeholder="Write review here..." required />
+                        <input className="review-input" type="text" album-artwork="Write review here..." required />
                         <div className="submit-options">
                             <Link to="/search">
                                 <input type="submit" value="Submit" />

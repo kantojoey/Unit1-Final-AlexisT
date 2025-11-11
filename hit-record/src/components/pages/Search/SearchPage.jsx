@@ -6,7 +6,7 @@ const SearchPage = () => {
         <main>
             <h1>Search for an album:</h1>
             <div className="search-box">
-                <input type="text" placeholder="Type album name here..." className="album-search"/>
+                <input type="text" album-artwork="Type album name here..." className="album-search"/>
                 <button className="search-button">
                     🔍
                 </button>
@@ -14,7 +14,7 @@ const SearchPage = () => {
             <h1>Search results...</h1>
             <div className="search-results">
                 <Card>
-                    <img src = {VinylRecord} className="placeholder"></img>
+                    <img src = {VinylRecord} className="album-artwork"></img>
                 </Card>
                 <button className="add-album-button">
                     <span style={{textAlign:"center"}}>+</span>

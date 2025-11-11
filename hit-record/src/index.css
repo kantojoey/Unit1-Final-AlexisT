@@ -1,11 +1,16 @@
 @import url("./components/common/common.css");
 
-main {
-    background: linear-gradient(to bottom, #3b0764,#581c87, #6b21a8, #000000);
-    width: 100%;
-    color: white;
-    padding: 1rem;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+
+
+body {
+    margin: 0;
+}
+
 #body-container {
     display: flex;
     flex-direction: column;
@@ -14,8 +19,22 @@ main {
 
 main {
     flex: 1;
+    background: linear-gradient(to bottom, #3b0764, #581c87, #6b21a8, #000000);
+    width: 100%;
+    color: white;
+    padding: 1rem;
 }
 
+/* Loading Page*/
+/* ----------------------------- */
+
+.loading-page-main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Spinning Vinyl Image */
 .spin {
     animation: spin 2s linear infinite;
     width: 200px;
@@ -23,6 +42,7 @@ main {
     margin-top: 50px;
     margin-bottom: 100px;
 }
+
 
 @keyframes spin {
     from {
@@ -34,37 +54,60 @@ main {
     }
 }
 
-.loading-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .start-button {
-    background-color: yellow;
-    padding: 20px 20px;
-    margin-bottom: 50px;
+    color: white;
+    font-size: 2rem;
+    background-color: #6b21a8;
+    /* padding: 10px 20px; */
+    margin-bottom: 0.5px;
     border-radius: 50px;
-    width: 200px;
+    width: 15rem;
+    box-shadow: 1rem 1rem 10rem rgb(168, 85, 247);
 }
 
-.album-shelf {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    border: 2px solid brown;
-    margin: 50px 50px;
-    padding-left: 15px;
-    place-items: center;
+.album-card {
+    border: none;
 }
 
-.placeholder {
+/* To be album sizing styling */
+.album-artwork {
     width: 200px;
     height: 200px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px 0px;
 }
+
+/* Home Page */
+/* ----------------------------- */
+
+.expanded-album-review-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2vh;
+}
+
+.key-album-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding-left: 15px;
+    place-items: center;
+    flex: 1
+}
+
+.album-datapoint-card {
+    border: none;
+    text-align: center;
+}
+
+.user-review-card {
+    flex: 1;
+    padding: 2vw
+}
+
+/* Listening Log Page */
 
 #user-stats {
     display: grid;
@@ -180,43 +223,12 @@ main {
     text-align: center;
 }
 
-.expanded-album-content {
+.expanded-album-details-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.rating-box {
-    font-size: 3vw;
-    border: 2px solid black;
-    padding: 0px 15px;
-}
-
-.album-details-expanded {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    border: 2px solid black;
-    margin: 0;
-    padding-left: 15px;
-    place-items: center;
-    flex: 1
-}
-
-.user-review {
-    flex: 1;
-    border: 2px solid black;
-    padding: 2vw
-}
-
-.review-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* replaces space-evenly for better control */
-  margin-top: 2vh;
 }
 
 .page-container {

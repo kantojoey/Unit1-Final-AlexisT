@@ -10,10 +10,9 @@ const LoadingPage = () => {
     };
     return (
         <main>
-            <div className="loading-content">
-                <h1>Hit Record</h1>
+            <div className="loading-page-main-div">
                 <img src={VinylRecord} className="spin"></img>
-                <button onClick={handleClick} className="start-button">Start</button>
+                <button onClick={handleClick} className="start-button"><h4>Start</h4></button>
             </div>
         </main>
     );
