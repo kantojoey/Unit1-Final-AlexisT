@@ -108,32 +108,43 @@ main {
 }
 
 /* Listening Log Page */
+/* ----------------------------- */
 
-#user-stats {
+#user-stats-log-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     place-items: center;
 }
 
-.listening-stat {
-    border: 2px solid brown;
+.listening-stat-card {
     padding: 10px 10px;
     width: 20rem;
     text-align: center;
 }
 
+.recently-listened-shelf {
+    grid-template-columns: repeat(5, 1fr);
+}
 /* Fix this so it shows 5 per row on desktop and switches at breakpoints */
-.recently-listened {
+/* .recently-listened {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
-    border: 2px solid brown;
     margin: 50px 50px;
     padding-left: 15px;
     place-items: center;
     width: 100%;
-}
+} */
+
+/* About Page */
+/* ----------------------------- */
+
+/* Search Page */
+/* ----------------------------- */
+
+/* Profile Page */
+/* ----------------------------- */
 
 .search-box {
     display: flex;
