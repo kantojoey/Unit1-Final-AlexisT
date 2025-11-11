@@ -14,7 +14,8 @@ body {
 #body-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 150vh;
+    max-height: 150vh;
 }
 
 main {
@@ -79,6 +80,13 @@ main {
 
 /* Home Page */
 /* ----------------------------- */
+.expanded-album-details-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 .expanded-album-review-content {
     display: flex;
@@ -127,6 +135,7 @@ main {
 .recently-listened-shelf {
     grid-template-columns: repeat(5, 1fr);
 }
+
 
 /* About Page */
 /* ----------------------------- */
@@ -310,12 +319,6 @@ main {
 /* Profile Page */
 /* ----------------------------- */
 
-
-.profile-pic {
-    width: 200px;
-    height: 200px;
-}
-
 .user-profile-info {
     display: flex;
     flex-direction: column;
@@ -325,23 +328,19 @@ main {
 
 .profile-pic-div {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
 
+.profile-pic {
+    width: 200px;
+    height: 200px;
 }
 
 .profile-stat {
-    border: 2px solid brown;
     padding: 10px 10px;
     width: 8rem;
-    text-align: center;
-}
-
-.expanded-album-details-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
