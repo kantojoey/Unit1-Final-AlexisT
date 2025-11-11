@@ -5,22 +5,22 @@ import Card from "../../common/Card";
 const ReviewPage = () => {
     return (
         <main>
-            <Link to="/search">
-                <h4 style={{ textDecoration: "underline" }}>←Back to search</h4>
+            <Link to="/search" style={{ color: "white" }}>
+                <h2 style={{ textDecoration: "underline" }}>←Back to home</h2>
             </Link>
-            <div className="page-container">
-                <div className="album-review-info">
-                    <Card>
+            <div className="review-page-container">
+                <div className="selected-album-review-data">
+                    <Card className="album-card">
                         <img src={VinylRecord} className="album-artwork"></img>
                     </Card>
-                    <h4>Title</h4>
-                    <h4>Artist</h4>
-                    <h4>Year</h4>
+                    <h3>Title</h3>
+                    <h3>Artist</h3>
+                    <h3>Year</h3>
                 </div>
                 <div className="album-review-entry">
                     <div className="rating-entry">
                         <h2>Rating</h2>
-                        <select id="rating" name="rating" required>
+                        <select id="album-rating-selector" name="rating" required>
                             <option value="" selected disabled>Select a rating</option>
                             <option value="★">★</option>
                             <option value="★★">★★</option>
@@ -31,7 +31,11 @@ const ReviewPage = () => {
                     </div>
                     <div className="review-entry">
                         <h2>Review:</h2>
-                        <input className="review-input" type="text" album-artwork="Write review here..." required />
+                        <textarea
+                            className="album-review-input-content"
+                            placeholder="Write review here..."
+                            required
+                        />
                         <div className="submit-options">
                             <Link to="/search">
                                 <input type="submit" value="Submit" />
