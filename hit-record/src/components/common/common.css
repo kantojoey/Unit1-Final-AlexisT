@@ -22,6 +22,11 @@
     background-color: rgb(168, 85, 247, 0.2);
 }
 
+.nav-item.active {
+    color: rgb(192 132 252);
+    background-color: rgb(168, 85, 247, 0.2);
+}
+
 /* Header and Footer*/
 /* ----------------------------- */
 
