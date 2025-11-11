@@ -1,11 +1,16 @@
 @import url("./components/common/common.css");
 
-main {
-    background: linear-gradient(to bottom, #3b0764,#581c87, #6b21a8, #000000);
-    width: 100%;
-    color: white;
-    padding: 1rem;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+
+
+body {
+    margin: 0;
+}
+
 #body-container {
     display: flex;
     flex-direction: column;
@@ -14,7 +19,13 @@ main {
 
 main {
     flex: 1;
+    background: linear-gradient(to bottom, #3b0764, #581c87, #6b21a8, #000000);
+    width: 100%;
+    color: white;
+    padding: 1rem;
 }
+
+/* Loading Page */
 
 .spin {
     animation: spin 2s linear infinite;
@@ -42,11 +53,14 @@ main {
 }
 
 .start-button {
-    background-color: yellow;
-    padding: 20px 20px;
-    margin-bottom: 50px;
+    color: white;
+    font-size: 2rem;
+    background-color: #6b21a8;
+    /* padding: 10px 20px; */
+    margin-bottom: 0.5px;
     border-radius: 50px;
-    width: 200px;
+    width: 15rem;
+    box-shadow: 1rem 1rem 10rem rgb(168, 85, 247);
 }
 
 .album-shelf {
@@ -212,11 +226,12 @@ main {
 }
 
 .review-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* replaces space-evenly for better control */
-  margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* replaces space-evenly for better control */
+    margin-top: 2vh;
 }
 
 .page-container {
