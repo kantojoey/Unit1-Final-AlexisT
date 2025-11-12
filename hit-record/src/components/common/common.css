@@ -64,15 +64,6 @@ footer {
 
 /* Album Shelf */
 /* ----------------------------- */
-/* .album-shelf-default-styles {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    border: 0.2rem solid rgb(192 132 252);
-    margin: 50px 50px;
-    padding-left: 15px;
-    place-items: center;
-} */
 .album-shelf-default-styles {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -90,11 +81,13 @@ footer {
 
 
 /* Card */
+/* ----------------------------- */
 .card-default-styles {
     border: 0.2rem solid rgb(192 132 252);
 }
 
 /* Button */
+/* ----------------------------- */
 .button-default-styles {
     color: white;
     background-color: #6b21a8;
