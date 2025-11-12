@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import Card from "../../common/Card";
 import VinylRecord from "../../images/VinylRecord.png"
+import Button from "../../common/Button";
 
 const SearchPage = () => {
 
@@ -14,17 +15,17 @@ const SearchPage = () => {
             <h1>Search for an album:</h1>
             <section className="album-search-section">
                 <input type="text" placeholder="Type album name here..." className="album-search-box" />
-                <button className="search-button">
+                <Button className="search-button">
                     🔍
-                </button>
+                </Button>
             </section>
             <h1>Search results...</h1>
             <section className="search-results-section">
                 <Card className="album-card">
                     <img src={VinylRecord} className="album-artwork"></img>
                 </Card>
-                <button className="add-album-button" onClick={handleLogAlbum}> + Log Album
-                </button>
+                <Button className="add-album-button" onClick={handleLogAlbum}> + Log Album
+                </Button>
             </section>
         </main>
     );

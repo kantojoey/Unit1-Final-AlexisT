@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import VinylRecord from "../../images/VinylRecord.png"
 import Card from "../../common/Card";
+import Button from "../../common/Button";
 
 const ReviewPage = () => {
     return (
@@ -41,9 +42,9 @@ const ReviewPage = () => {
                                 <input type="submit" value="Submit" />
                             </Link>
                             <Link to="/search">
-                                <button>
+                                <Button>
                                     Cancel
-                                </button>
+                                </Button>
                             </Link>
                         </div>
                     </div>

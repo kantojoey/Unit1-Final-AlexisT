@@ -73,16 +73,19 @@ footer {
     padding-left: 15px;
     place-items: center;
 } */
- .album-shelf-default-styles {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;   /* centers cards in their columns */
-  align-items: start;      /* keeps vertical alignment consistent */
-  gap: 1rem;
-  border: 0.2rem solid rgb(192 132 252);
-  margin: 50px 50px;
-  padding: 1rem;           /* uniform inner padding */
-  box-sizing: border-box;
+.album-shelf-default-styles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    /* centers cards in their columns */
+    align-items: start;
+    /* keeps vertical alignment consistent */
+    gap: 1rem;
+    border: 0.2rem solid rgb(192 132 252);
+    margin: 50px 50px;
+    padding: 1rem;
+    /* uniform inner padding */
+    box-sizing: border-box;
 }
 
 
@@ -92,3 +95,18 @@ footer {
 }
 
 /* Button */
+.button-default-styles {
+    color: white;
+    background-color: #6b21a8;
+    border: 0.1rem solid rgb(192 132 252);
+    cursor: pointer;
+    width: 10vw;
+    height: 50px;
+    border-radius: 6px;
+    font-size: 1.5rem;
+}
+
+.button-default-styles:hover {
+    background-color: rgb(192 132 252);
+    cursor: pointer;
+}
