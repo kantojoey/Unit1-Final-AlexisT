@@ -7,7 +7,7 @@ const HomePage = () => {
     return (
         <main>
             <h1><strong>My Favorites at a glance</strong></h1>
-            <AlbumShelf>
+            <AlbumShelf className="favorites-display">
                 <Card className="album-card">
                     <img src={VinylRecord} className="album-artwork"></img>
                 </Card>
