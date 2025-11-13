@@ -158,17 +158,6 @@ main {
     padding-right: 2rem;
 }
 
-/* @media (max-width: 768px) {
-    .about-divider {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-divider p {
-        padding-right: 0;
-    }
-} */
-
 /* Search Page */
 /* ----------------------------- */
 
@@ -338,118 +327,99 @@ main {
     text-align: center;
 }
 
+/* .overlay-button:hover {
+    visibility: visible;
+}
+.overlay-button {
+    visibility: hidden;
+} */
+
 
 /** MEDIA QUERIES **/
 
-/* Tablet adjustments */
-/* ========================================================= */
-/* 📱 Responsive Adjustments for Shared Components */
-/* ========================================================= */
-
 /* Tablet (≤1024px) */
-@media (max-width: 1024px) {
 
-    /* Header */
-    .header-content {
-        flex-direction: row;
-        gap: 0.25rem;
-    }
+@media screen and (max-width: 1024px) {
 
-    .header-text {
-        font-size: 2.5rem;
-    }
 
-    .record-icon {
-        font-size: 3rem;
-    }
-
-    /* Bottom Nav */
-    .bottom-nav {
-        padding: 0.4rem 0;
-    }
-
-    .nav-item {
-        font-size: 2.5rem;
-    }
-
-    /* Buttons */
-    .button-default-styles {
-        width: 20vw;
-        font-size: 1.2rem;
-    }
-
-    /* Album shelf grid */
-    .album-shelf-default-styles {
+    .recently-listened-shelf {
         grid-template-columns: repeat(3, 1fr);
         margin: 30px 30px;
         gap: 0.75rem;
     }
+
 
     .favorites-display {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+
 /* Mobile (≤768px) */
 @media (max-width: 768px) {
+    .recently-listened-shelf {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 30px 30px;
+        gap: 0.75rem;
+    }
 
-    /* Header */
-    header {
+    .about-divider {
         flex-direction: column;
-        padding: 0.5rem;
-    }
-
-    .header-content {
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-
-    .record-icon {
-        font-size: 2.5rem;
-    }
-
-    .header-text {
-        font-size: 1.75rem;
         text-align: center;
     }
 
-    /* Footer */
-    footer {
-        font-size: 0.9rem;
-        padding: 0.75rem;
+    .about-divider p {
+        padding-right: 0;
+        text-align: justify;
     }
 
-    /* Bottom Nav */
-    .bottom-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        padding: 0.25rem;
+    .review-page-container {
+        display: flex;
+        flex-direction: column;
     }
 
-    .nav-item {
-        font-size: 2rem;
-        padding: 0.5rem;
+    .album-review-input-content {
+        width: 75vw;
+        height: 30vh;
+        font-size: 1.3rem;
     }
 
-    /* Buttons */
-    .button-default-styles {
-        width: 60vw;
-        height: 45px;
-        font-size: 1.1rem;
+    #album-rating-selector {
+        font-size: 1.5rem;
     }
 
-    /* Album shelf grid */
-    .album-shelf-default-styles {
+    .overlay-button {
+    background-color: #6b21a8;
+    border: 0.1rem solid rgb(192 132 252);
+    width: 8rem;
+    height: 45px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+    }
+
+}
+
+/* Smaller Screen (≤500px) */
+@media screen and (max-width: 500px) {
+    .favorites-display {
         grid-template-columns: repeat(2, 1fr);
-        margin: 20px 10px;
-        gap: 0.5rem;
     }
 
-    /* Cards */
-    .card-default-styles {
-        width: 90%;
-    }
+    .album-artwork {
+    width: 150px;
+    height: 150px;
+}
+
+.key-album-data {
+    display: flex;
+    flex-direction: column;
+}
+
+#user-stats-log-section {
+    display: flex;
+    flex-direction: column;
+}
+
 }
