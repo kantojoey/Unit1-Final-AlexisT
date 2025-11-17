@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const SearchPage = ({ accessToken, setReviewedAlbum }) => {
 
-    const [searchInput, setSearchInput] = useState(null);
+    const [searchInput, setSearchInput] = useState("");
 
     const [albums, setAlbums] = useState([]);
 
@@ -52,11 +52,12 @@ const SearchPage = ({ accessToken, setReviewedAlbum }) => {
                     🔍
                 </Button>
             </section>
+            {albums.length > 0 &&
             <h1>Search results...</h1>
+            }
             <section className="search-results-section">
 
                 {albums.map((album) => {
-                    console.log(album);
                     return (
                         <div key={album.id}>
                             <Card className="album-card">
