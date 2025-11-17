@@ -30,7 +30,7 @@ const SearchPage = ({ accessToken, setReviewedAlbum }) => {
             },
         };
 
-        const albumID = await fetch("https://api.spotify.com/v1/search?q=" + searchInput + "&limit=4" + "&type=album",
+        await fetch("https://api.spotify.com/v1/search?q=" + searchInput + "&limit=8" + "&type=album",
             albumParams
         )
             .then(response => response.json())

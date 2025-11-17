@@ -22,7 +22,8 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
             image: reviewedAlbum.images[0].url,
             albumName: reviewedAlbum.name,
             artistName: reviewedAlbum.artists[0].name,
-            year: reviewedAlbum.release_date,
+            year: reviewedAlbum.release_date.slice(0,4),
+            tracks: reviewedAlbum.total_tracks,
             rating,
             reviewText,
         };
@@ -73,7 +74,7 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
                             </Card>
                             <h3>{reviewedAlbum.name}</h3>
                             <h3>{reviewedAlbum.artists[0].name}</h3>
-                            <h3>{reviewedAlbum.release_date}</h3>
+                            <h3>{reviewedAlbum.release_date.slice(0,4)}</h3>
                         </div>
                         <div className="album-review-entry">
                             <div className="rating-entry">
