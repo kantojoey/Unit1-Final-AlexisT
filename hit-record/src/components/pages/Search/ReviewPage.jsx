@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router";
 import Card from "../../common/Card";
 import Button from "../../common/Button";
+import { useEffect, useRef } from "react";
 
 const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, setRating, reviewText, setReviewText }) => {
 
@@ -47,6 +48,16 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
         setReviewedAlbum(null);
     };
 
+    // Focuses user text input box
+
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus()
+
+        }
+    }, []);
 
     return (
         <main>
@@ -65,7 +76,8 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
                 <div className="album-review-entry">
                     <div className="rating-entry">
                         <h2>Rating</h2>
-                        <select id="album-rating-selector" name="rating"
+                        <select id="album-rating-selector"
+                            name="rating"
                             value={rating}
                             onChange={(e) => setRating(e.target.value)}
                             required>
@@ -84,6 +96,7 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
                             placeholder="Write review here..."
                             value={reviewText}
                             onChange={(e) => setReviewText(e.target.value)}
+                            ref={inputRef}
                             required
                         />
                         <div className="submit-options">
