@@ -61,57 +61,68 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
 
     return (
         <main>
-            <Link to="/search" style={{ color: "white" }}>
-                <h2 style={{ textDecoration: "underline" }}>←Back</h2>
-            </Link>
-            <div className="review-page-container">
-                <div className="selected-album-review-data">
-                    <Card className="album-card">
-                        <img src={reviewedAlbum.images[0].url} className="album-artwork"></img>
-                    </Card>
-                    <h3>{reviewedAlbum.name}</h3>
-                    <h3>{reviewedAlbum.artists[0].name}</h3>
-                    <h3>{reviewedAlbum.release_date}</h3>
-                </div>
-                <div className="album-review-entry">
-                    <div className="rating-entry">
-                        <h2>Rating</h2>
-                        <select id="album-rating-selector"
-                            name="rating"
-                            value={rating}
-                            onChange={(e) => setRating(e.target.value)}
-                            required>
-                            <option value="" selected disabled>Select a rating</option>
-                            <option value="★">★</option>
-                            <option value="★★">★★</option>
-                            <option value="★★★">★★★</option>
-                            <option value="★★★★">★★★★</option>
-                            <option value="★★★★★">★★★★★</option>
-                        </select>
-                    </div>
-                    <div className="review-entry">
-                        <h2>Review:</h2>
-                        <textarea
-                            className="album-review-input-content"
-                            placeholder="Write review here..."
-                            value={reviewText}
-                            onChange={(e) => setReviewText(e.target.value)}
-                            ref={inputRef}
-                            required
-                        />
-                        <div className="submit-options">
-                            <input
-                                type="submit" value="Submit"
-                                onClick={saveAlbumReview} />
+            {reviewedAlbum ? (
+                <>
+                    <Link to="/search" style={{ color: "white" }}>
+                        <h3 style={{ textDecoration: "underline" }}>←Back</h3>
+                    </Link>
+                    <div className="review-page-container">
+                        <div className="selected-album-review-data">
+                            <Card className="album-card">
+                                <img src={reviewedAlbum.images[0].url} className="album-artwork"></img>
+                            </Card>
+                            <h3>{reviewedAlbum.name}</h3>
+                            <h3>{reviewedAlbum.artists[0].name}</h3>
+                            <h3>{reviewedAlbum.release_date}</h3>
+                        </div>
+                        <div className="album-review-entry">
+                            <div className="rating-entry">
+                                <h2>Rating</h2>
+                                <select id="album-rating-selector"
+                                    name="rating"
+                                    value={rating}
+                                    onChange={(e) => setRating(e.target.value)}
+                                    required>
+                                    <option value="" selected disabled>Select a rating</option>
+                                    <option value="★">★</option>
+                                    <option value="★★">★★</option>
+                                    <option value="★★★">★★★</option>
+                                    <option value="★★★★">★★★★</option>
+                                    <option value="★★★★★">★★★★★</option>
+                                </select>
+                            </div>
+                            <div className="review-entry">
+                                <h2>Review:</h2>
+                                <textarea
+                                    className="album-review-input-content"
+                                    placeholder="Write review here..."
+                                    value={reviewText}
+                                    onChange={(e) => setReviewText(e.target.value)}
+                                    ref={inputRef}
+                                    required
+                                />
+                                <div className="submit-options">
+                                    <input
+                                        type="submit" value="Submit"
+                                        onClick={saveAlbumReview} />
 
 
-                            <Button onClick={cancelAlbumReview}>
-                                Cancel
-                            </Button>
+                                    <Button onClick={cancelAlbumReview}>
+                                        Cancel
+                                    </Button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </>
+            ) : (
+                <>
+                <Link to="/search" style={{ color: "white" }}>
+                        <h3 style={{ textDecoration: "underline" }}>←Back</h3>
+                    </Link>
+                <p style={{textAlign:"justify", fontSize:"2rem"}}>Nothing to see here yet. Return to the search page to select an album for review.</p>
+                </>
+            )}
         </main>
     );
 };
