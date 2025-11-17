@@ -19,7 +19,20 @@ const clientID = import.meta.env.VITE_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
 function App() {
-const [accessToken, setAccessToken] = useState();
+  // Album to be reviewed by user
+  const [reviewedAlbum, setReviewedAlbum] = useState(null);
+
+  // List of all album reviews for listening log
+  const [albumReviews, setAlbumReviews] = useState([]);
+
+  // Album review rating
+  const [rating, setRating] = useState("");
+
+  // Album review text
+  const [reviewText, setReviewText] = useState("");
+
+  //API access token
+  const [accessToken, setAccessToken] = useState();
 
   useEffect(() => {
     // Storing the fetch parameters for readability
@@ -47,15 +60,15 @@ const [accessToken, setAccessToken] = useState();
     <div id="body-container">
       <Header />
       <Routes>
-        <Route path = "/" element = {<LoadingPage />}/>
-        <Route path = "/home" element = {<HomePage />}/>
-        <Route path = "/home/album" element = {<ExpandedDetailsPage />}/>
-        <Route path = "/listening-log" element = {<ListeningLogPage />}/>
-        <Route path = "/about" element = {<AboutPage />}/>
-        <Route path = "/search" element = {<SearchPage accessToken={accessToken}/>}/>
-        <Route path = "/search/review" element = {<ReviewPage />}/>
-        <Route path = "/profile" element = {<ProfilePage />}/>
-        <Route path = "*" element = {<Navigate to = "/" />}/>
+        <Route path="/" element={<LoadingPage />} />
+        <Route path="/home" element={<HomePage albumReviews={albumReviews} />} />
+        <Route path="/home/album" element={<ExpandedDetailsPage />} />
+        <Route path="/listening-log" element={<ListeningLogPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/search" element={<SearchPage accessToken={accessToken} setReviewedAlbum={setReviewedAlbum} />}/>
+        <Route path="/search/review" element={<ReviewPage reviewedAlbum={reviewedAlbum} setReviewedAlbum={setReviewedAlbum} setAlbumReviews={setAlbumReviews} rating={rating} setRating={setRating} reviewText={reviewText} setReviewText={setReviewText}/>} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <BottomNavBar />
       <Footer />

@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router";
 import Card from "../../common/Card";
-import VinylRecord from "../../images/VinylRecord.png"
 import Button from "../../common/Button";
 import { useState } from "react";
 
 
 
-const SearchPage = ({ accessToken }) => {
+const SearchPage = ({ accessToken, setReviewedAlbum }) => {
 
     const [searchInput, setSearchInput] = useState(null);
 
@@ -15,11 +14,13 @@ const SearchPage = ({ accessToken }) => {
 
     let navigate = useNavigate();
 
-    const handleLogAlbum = () => {
+    const handleLogAlbum = (album) => {
+        setReviewedAlbum(album);
         navigate("/search/review");
         console.log("Now under review");
     };
 
+    // Logic to fetch album data from API
     const searchAlbum = async () => {
         let albumParams = {
             method: "GET",
@@ -29,7 +30,7 @@ const SearchPage = ({ accessToken }) => {
             },
         };
 
-        const albumID = await fetch("https://api.spotify.com/v1/search?q=" + searchInput + "&limit=4" +"&type=album",
+        const albumID = await fetch("https://api.spotify.com/v1/search?q=" + searchInput + "&limit=4" + "&type=album",
             albumParams
         )
             .then(response => response.json())
@@ -39,7 +40,7 @@ const SearchPage = ({ accessToken }) => {
             })
     };
 
-console.log(albums)
+    console.log(albums)
 
 
     return (
@@ -62,7 +63,7 @@ console.log(albums)
                                 <img src={album.images[0].url} alt={album.name} className="album-artwork"></img>
                                 <h3>{album.name}</h3>
                             </Card>
-                            <Button className="add-album-button" onClick={handleLogAlbum}> + Log Album
+                            <Button className="add-album-button" onClick={()=>handleLogAlbum(album)}> + Log Album
                             </Button>
                         </div>
                     )

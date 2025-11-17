@@ -1,27 +1,74 @@
-import { Link } from "react-router";
-import VinylRecord from "../../images/VinylRecord.png"
+import { Link, useNavigate } from "react-router";
 import Card from "../../common/Card";
 import Button from "../../common/Button";
 
-const ReviewPage = () => {
+const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, setRating, reviewText, setReviewText }) => {
+
+    let navigate = useNavigate();
+
+    // Logic to set and store album reviews on submit
+    const saveAlbumReview = () => {
+        console.log("rating:", rating, "reviewText:", reviewText, "length:", reviewText.length);
+
+        if (!rating || !reviewText) {
+            alert("Please fill out album rating and review before submission!");
+            return;
+        };
+
+
+        const newReview = {
+            albumId: reviewedAlbum.id,
+            image: reviewedAlbum.images[0].url,
+            albumName: reviewedAlbum.name,
+            artistName: reviewedAlbum.artists[0].name,
+            year: reviewedAlbum.release_date,
+            rating,
+            reviewText,
+        };
+
+
+        setAlbumReviews(prevReviews => [newReview, ...prevReviews])
+
+
+        navigate("/search")
+        alert("Album review submitted!");
+        setRating("");
+        setReviewText("");
+        setReviewedAlbum(null);
+
+    };
+
+
+    // Handles cancelled album review
+    const cancelAlbumReview = () => {
+        navigate("/search")
+        setRating("");
+        setReviewText("");
+        setReviewedAlbum(null);
+    };
+
+
     return (
         <main>
             <Link to="/search" style={{ color: "white" }}>
-                <h2 style={{ textDecoration: "underline" }}>←Back to home</h2>
+                <h2 style={{ textDecoration: "underline" }}>←Back</h2>
             </Link>
             <div className="review-page-container">
                 <div className="selected-album-review-data">
                     <Card className="album-card">
-                        <img src={VinylRecord} className="album-artwork"></img>
+                        <img src={reviewedAlbum.images[0].url} className="album-artwork"></img>
                     </Card>
-                    <h3>Title</h3>
-                    <h3>Artist</h3>
-                    <h3>Year</h3>
+                    <h3>{reviewedAlbum.name}</h3>
+                    <h3>{reviewedAlbum.artists[0].name}</h3>
+                    <h3>{reviewedAlbum.release_date}</h3>
                 </div>
                 <div className="album-review-entry">
                     <div className="rating-entry">
                         <h2>Rating</h2>
-                        <select id="album-rating-selector" name="rating" required>
+                        <select id="album-rating-selector" name="rating"
+                            value={rating}
+                            onChange={(e) => setRating(e.target.value)}
+                            required>
                             <option value="" selected disabled>Select a rating</option>
                             <option value="★">★</option>
                             <option value="★★">★★</option>
@@ -35,17 +82,19 @@ const ReviewPage = () => {
                         <textarea
                             className="album-review-input-content"
                             placeholder="Write review here..."
+                            value={reviewText}
+                            onChange={(e) => setReviewText(e.target.value)}
                             required
                         />
                         <div className="submit-options">
-                            <Link to="/search">
-                                <input type="submit" value="Submit" />
-                            </Link>
-                            <Link to="/search">
-                                <Button>
-                                    Cancel
-                                </Button>
-                            </Link>
+                            <input
+                                type="submit" value="Submit"
+                                onClick={saveAlbumReview} />
+
+
+                            <Button onClick={cancelAlbumReview}>
+                                Cancel
+                            </Button>
                         </div>
                     </div>
                 </div>
