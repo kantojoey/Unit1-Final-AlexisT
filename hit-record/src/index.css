@@ -62,6 +62,7 @@ main {
 
 .album-card {
     border: none;
+    cursor: pointer;
 }
 
 /* To be album sizing styling */
@@ -102,6 +103,17 @@ main {
 .album-datapoint-card {
     border: none;
     text-align: center;
+}
+
+.data-heading {
+    font-weight: normal;
+}
+
+.data-category {
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(192 132 252);
+    text-decoration-thickness: 0.1rem;
 }
 
 .user-review-card {

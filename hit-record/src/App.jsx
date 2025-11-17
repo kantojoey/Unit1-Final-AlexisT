@@ -31,6 +31,9 @@ function App() {
   // Album review text
   const [reviewText, setReviewText] = useState("");
 
+  // Album expanded details page setter
+  const [expandedAlbum, setExpandedAlbum] = useState(null);
+
   //API access token
   const [accessToken, setAccessToken] = useState();
 
@@ -61,8 +64,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<LoadingPage />} />
-        <Route path="/home" element={<HomePage albumReviews={albumReviews} />} />
-        <Route path="/home/album" element={<ExpandedDetailsPage />} />
+        <Route path="/home" element={<HomePage albumReviews={albumReviews} setExpandedAlbum={setExpandedAlbum}/>} />
+        <Route path="/home/album" element={<ExpandedDetailsPage expandedAlbum={expandedAlbum}/>} />
         <Route path="/listening-log" element={<ListeningLogPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/search" element={<SearchPage accessToken={accessToken} setReviewedAlbum={setReviewedAlbum} />}/>

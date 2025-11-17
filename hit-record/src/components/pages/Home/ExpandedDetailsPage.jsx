@@ -2,44 +2,45 @@ import { Link } from "react-router";
 import Card from "../../common/Card";
 import VinylRecord from "../../images/VinylRecord.png"
 
-const ExpandedDetailsPage = () => {
+const ExpandedDetailsPage = ({expandedAlbum}) => {
     return (
         <main>
+            {expandedAlbum ? (
+                <>
+                
             <Link to="/home" style={{ color: "white" }}>
                 <h2 style={{ textDecoration: "underline" }}>←Back to home</h2>
             </Link>
             <div className="expanded-album-details-page">
                 <Card className="album-card">
-                    <img src={VinylRecord} className="album-artwork"></img>
+                    <img src={expandedAlbum.image} className="album-artwork" style={{cursor:"auto"}}></img>
                 </Card>
-                <h2>Title</h2>
-                <h2>Artist</h2>
-                <h2>
-                    ★★★★★
-                </h2>
+                <h2><span className="data-category">Rating:</span> {expandedAlbum.rating}</h2>
             </div>
             <div className="expanded-album-review-content">
                 <Card className="key-album-data">
                     <Card className="album-datapoint-card">
-                        <h3>[YEAR]</h3>
+                        <h3 className="data-heading"><span className="data-category">Title:</span> {expandedAlbum.albumName}</h3>
                     </Card>
                     <Card className="album-datapoint-card ">
-                        <h3>[GENRE]</h3>
+                        <h3 className="data-heading"><span className="data-category">Artist:</span> {expandedAlbum.artistName}</h3>
                     </Card>
                     <Card className="album-datapoint-card ">
-                        <h3>[RUNTIME]</h3>
+                        <h3 className="data-heading"><span className="data-category">Title:</span> {expandedAlbum.year}</h3>
                     </Card>
                     <Card className="album-datapoint-card ">
-                        <h3>[# OF TRACKS]</h3>
+                        <h3 className="data-heading">{expandedAlbum.tracks} <span className="data-category">tracks</span></h3>
                     </Card>
                 </Card>
                 <Card className="user-review-card">
-                    <h3>My Review:</h3>
+                    <h3 className="data-category">My Review:</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+                        {expandedAlbum.reviewText}
                     </p>
                 </Card>
             </div>
+                </>
+            ) : (<p>Nothing to see yet...</p>)}
         </main>
     );
 };
