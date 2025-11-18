@@ -66,7 +66,7 @@ function App() {
         <Route path="/" element={<LoadingPage />} />
         <Route path="/home" element={<HomePage albumReviews={albumReviews} setExpandedAlbum={setExpandedAlbum}/>} />
         <Route path="/home/album" element={<ExpandedDetailsPage expandedAlbum={expandedAlbum}/>} />
-        <Route path="/listening-log" element={<ListeningLogPage />} />
+        <Route path="/listening-log" element={<ListeningLogPage albumReviews={albumReviews} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/search" element={<SearchPage accessToken={accessToken} setReviewedAlbum={setReviewedAlbum} />}/>
         <Route path="/search/review" element={<ReviewPage reviewedAlbum={reviewedAlbum} setReviewedAlbum={setReviewedAlbum} setAlbumReviews={setAlbumReviews} rating={rating} setRating={setRating} reviewText={reviewText} setReviewText={setReviewText}/>} />
