@@ -7,10 +7,16 @@ const ExpandedDetailsPage = ({ expandedAlbum }) => {
         <main>
             {expandedAlbum ? (
                 <>
+                    <span style={{display:"flex", flexDirection:"row", gap:"10px"}}>
 
-                    <Link to="/home" style={{ color: "white" }}>
-                        <h2 style={{ textDecoration: "underline" }}>←Back to home</h2>
-                    </Link>
+                        <Link to="/home" style={{ color: "white" }}>
+                            <h3 style={{ textDecoration: "underline" }}>Home</h3>
+                        </Link>
+                        <p>__</p>
+                        <Link to="/listening-log" style={{ color: "white" }}>
+                            <h3 style={{ textDecoration: "underline" }}>Listening Log</h3>
+                        </Link>
+                    </span>
                     <div className="expanded-album-details-page">
                         <Card className="album-card">
                             <img src={expandedAlbum.image} className="album-artwork" style={{ cursor: "auto" }}></img>
@@ -45,7 +51,7 @@ const ExpandedDetailsPage = ({ expandedAlbum }) => {
                     <Link to="/home" style={{ color: "white" }}>
                         <h2 style={{ textDecoration: "underline" }}>←Back to home</h2>
                     </Link>
-                    <p style={{textAlign:"justify", fontSize:"2rem"}}>Nothing to see here yet. Try logging an album for review to see details.</p>
+                    <p style={{ textAlign: "justify", fontSize: "2rem" }}>Nothing to see here yet. Try logging an album for review to see details.</p>
                 </>
             )
             }

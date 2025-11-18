@@ -1,8 +1,9 @@
+import { useNavigate } from "react-router";
 import AlbumShelf from "../common/AlbumShelf";
 import Card from "../common/Card";
 import VinylRecord from "../images/VinylRecord.png"
 
-const ListeningLogPage = ({ albumReviews }) => {
+const ListeningLogPage = ({ albumReviews, setExpandedAlbum }) => {
 
     const calculateAvg = (reviews) => {
         let sum = reviews.reduce((accumulator, reviews) => accumulator + reviews.rating.length, 0);
@@ -11,6 +12,12 @@ const ListeningLogPage = ({ albumReviews }) => {
         return avg;
     }
 
+    let navigate = useNavigate();
+    const albumDetailExpander = (album) => {
+        setExpandedAlbum(album);
+        navigate("/home/details");
+
+    }
 
     return (
         <main>
@@ -24,28 +31,16 @@ const ListeningLogPage = ({ albumReviews }) => {
                     </h2>
                 </Card>
             </section>
-            <AlbumShelf className="recently-listened-shelf">
-                <Card className="album-card">
-                    <img src={VinylRecord} className="album-artwork"></img>
-                </Card>
-                <Card className="album-card">
-                    <img src={VinylRecord} className="album-artwork"></img>
-                </Card>
-                <Card className="album-card">
-                    <img src={VinylRecord} className="album-artwork"></img>
-                </Card>
-                <Card className="album-card">
-                    <img src={VinylRecord} className="album-artwork"></img>
-                </Card>
-                <Card className="album-card">
-                    <img src={VinylRecord} className="album-artwork"></img>
-                </Card>
-                <Card className="album-card">
-                    <img src={VinylRecord} className="album-artwork"></img>
-                </Card>
-                <Card className="album-card">
-                    <img src={VinylRecord} className="album-artwork"></img>
-                </Card>
+            <AlbumShelf>
+                {albumReviews && albumReviews.length > 0 ? (albumReviews.map((album) => {
+                    return (
+                        <Card className="album-card" onClick={() => albumDetailExpander(album)}>
+                            <img src={album.image} className="album-artwork"></img>
+                        </Card>
+                    )
+                })) :
+                    (<p>Nothing to show here yet...</p>)
+                }
             </AlbumShelf>
         </main>
     );
