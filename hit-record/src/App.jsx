@@ -70,7 +70,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/search" element={<SearchPage accessToken={accessToken} setReviewedAlbum={setReviewedAlbum} />}/>
         <Route path="/search/review" element={<ReviewPage reviewedAlbum={reviewedAlbum} setReviewedAlbum={setReviewedAlbum} setAlbumReviews={setAlbumReviews} rating={rating} setRating={setRating} reviewText={reviewText} setReviewText={setReviewText}/>} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile" element={<ProfilePage albumReviews={albumReviews} />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <BottomNavBar />
