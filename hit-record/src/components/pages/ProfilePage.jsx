@@ -4,7 +4,7 @@ import Card from "../common/Card";
 import ProfilePic from "../images/ProfilePic.jpg"
 import VinylRecord from "../images/VinylRecord.png"
 
-const ProfilePage = () => {
+const ProfilePage = ({albumReviews}) => {
     return (
         <main>
             <div className="user-profile-info">
@@ -12,7 +12,7 @@ const ProfilePage = () => {
                 <div className="profile-pic-div">
                     <img className="profile-pic" src={ProfilePic} />
                     <Card className="profile-stat">
-                        <h2>[# of reviews]</h2>
+                        <h2>{albumReviews.length === 1 ? (`${albumReviews.length} review`) : (`${albumReviews.length} reviews`)}</h2>
                     </Card>
                 </div>
             </div>
