@@ -8,7 +8,7 @@ const HomePage = ({albumReviews, setExpandedAlbum}) => {
     let navigate = useNavigate();
     const albumDetailExpander = (album) => {
         setExpandedAlbum(album);
-        navigate("/home/album");
+        navigate("/home/details");
 
     }
     return (
