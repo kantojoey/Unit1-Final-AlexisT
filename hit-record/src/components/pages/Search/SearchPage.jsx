@@ -26,19 +26,30 @@ const SearchPage = ({ accessToken, setReviewedAlbum }) => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`
+                Authorization: `Bearer ${accessToken}`,
             },
         };
 
-        await fetch("https://api.spotify.com/v1/search?q=" + searchInput + "&limit=8" + "&type=album",
-            albumParams
-        )
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setAlbums(data.albums.items);
-            })
+        try {
+            const response = await fetch(
+                "https://api.spotify.com/v1/search?q=" +
+                searchInput +
+                "&limit=8&type=album",
+                albumParams
+            );
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log(data);
+            setAlbums(data.albums.items);
+        } catch (error) {
+            console.error("Failed to fetch albums:", error);
+        }
     };
+
 
     console.log(albums)
 
@@ -53,7 +64,7 @@ const SearchPage = ({ accessToken, setReviewedAlbum }) => {
                 </Button>
             </section>
             {albums.length > 0 &&
-            <h1>Search results...</h1>
+                <h1>Search results...</h1>
             }
             <section className="search-results-section">
 
@@ -64,7 +75,7 @@ const SearchPage = ({ accessToken, setReviewedAlbum }) => {
                                 <img src={album.images[0].url} alt={album.name} className="album-artwork"></img>
                                 <h3>{album.name}</h3>
                             </Card>
-                            <Button className="add-album-button" onClick={()=>handleLogAlbum(album)}> + Log Album
+                            <Button className="add-album-button" onClick={() => handleLogAlbum(album)}> + Log Album
                             </Button>
                         </div>
                     )
