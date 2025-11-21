@@ -1,10 +1,11 @@
 import AlbumShelf from "../common/AlbumShelf";
 import Button from "../common/Button";
 import Card from "../common/Card";
+import FavoritesDisplay from "../common/FavoritesDisplay";
 import ProfilePic from "../images/ProfilePic.jpg"
 import VinylRecord from "../images/VinylRecord.png"
 
-const ProfilePage = ({albumReviews}) => {
+const ProfilePage = ({ albumReviews, favorites, setFavorites, accessToken}) => {
     return (
         <main>
             <div className="user-profile-info">
@@ -18,24 +19,7 @@ const ProfilePage = ({albumReviews}) => {
             </div>
             <div className="favorite-section">
                 <h2><strong>My Favorites:</strong></h2>
-                <AlbumShelf className="favorites-display">
-                    <Card className="album-card">
-                        <img src={VinylRecord} className="album-artwork"></img>
-                        <Button className="overlay-button">Remove</Button>
-                    </Card>
-                    <Card className="album-card">
-                        <img src={VinylRecord} className="album-artwork"></img>
-                        <Button className="overlay-button">Remove</Button>
-                    </Card>
-                    <Card className="album-card">
-                        <img src={VinylRecord} className="album-artwork"></img>
-                        <Button className="overlay-button">Remove</Button>
-                    </Card>
-                    <Card className="album-card">
-                        <img src={VinylRecord} className="album-artwork"></img>
-                        <Button className="overlay-button">Remove</Button>
-                    </Card>
-                </AlbumShelf>
+                <FavoritesDisplay favorites={favorites} setFavorites={setFavorites} accessToken={accessToken} />
             </div>
         </main>
     );
