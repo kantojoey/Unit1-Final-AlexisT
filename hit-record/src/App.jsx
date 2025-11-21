@@ -67,7 +67,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<LoadingPage />} />
-        <Route path="/home" element={<HomePage albumReviews={albumReviews} setExpandedAlbum={setExpandedAlbum}/>} />
+        <Route path="/home" element={<HomePage albumReviews={albumReviews} setExpandedAlbum={setExpandedAlbum} favorites={favorites}/>} />
         <Route path="/home/details" element={<ExpandedDetailsPage expandedAlbum={expandedAlbum}/>} />
         <Route path="/listening-log" element={<ListeningLogPage albumReviews={albumReviews} setExpandedAlbum={setExpandedAlbum}/>} />
         <Route path="/about" element={<AboutPage />} />
