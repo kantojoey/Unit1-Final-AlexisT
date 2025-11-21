@@ -13,7 +13,9 @@ const HomePage = ({ albumReviews, setExpandedAlbum, favorites }) => {
     }
     return (
         <main>
-            <h1><strong>My Favorites at a glance</strong></h1>
+            <Link to="/profile" style={{ color: "white" }}>
+                <h1><strong>My Favorites at a glance</strong></h1>
+            </Link>
             <AlbumShelf className="favorites-display">
                 {favorites.map((album, index) => {
                     return (
