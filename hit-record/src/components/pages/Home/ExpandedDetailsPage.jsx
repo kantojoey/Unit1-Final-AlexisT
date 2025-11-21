@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import Card from "../../common/Card";
-import VinylRecord from "../../images/VinylRecord.png"
 
 const ExpandedDetailsPage = ({ expandedAlbum }) => {
     return (

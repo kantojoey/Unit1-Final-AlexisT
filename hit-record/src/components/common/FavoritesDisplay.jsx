@@ -61,7 +61,7 @@ const FavoritesDisplay = ({ favorites, setFavorites, accessToken }) => {
 
     return (
         <>
-            <AlbumShelf>
+            <AlbumShelf className="favorites-display">
                 {favorites.map((album, index) => {
                     return (
                         <div key={index}>
