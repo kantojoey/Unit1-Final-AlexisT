@@ -12,6 +12,7 @@ const HomePage = ({ albumReviews, setExpandedAlbum, favorites }) => {
         navigate("/home/details");
 
     };
+    
     return (
         <main>
             <Link to="/profile" style={{ color: "white" }}>

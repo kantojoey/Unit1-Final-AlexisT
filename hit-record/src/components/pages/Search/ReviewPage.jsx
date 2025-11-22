@@ -26,18 +26,16 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
         };
 
 
-        setAlbumReviews(prevReviews => [newReview, ...prevReviews])
-
-
-        navigate("/search")
+        setAlbumReviews(prevReviews => [newReview, ...prevReviews]);
+        navigate("/search");
         setRating("");
         setReviewText("");
         setReviewedAlbum(null);
-
     };
 
     const cancelAlbumReview = () => {
-        navigate("/search")
+
+        navigate("/search");
         setRating("");
         setReviewText("");
         setReviewedAlbum(null);
@@ -61,8 +59,8 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
                     </Link>
                     <div className="review-page-container">
                         <div className="selected-album-review-data">
-                            <Card className="album-card">
-                                <img src={reviewedAlbum.images[0].url} className="album-artwork"></img>
+                            <Card className="album-card-no-pointer">
+                                <img src={reviewedAlbum.images[0].url} alt={reviewedAlbum.name} title={reviewedAlbum.name} className="album-artwork"></img>
                             </Card>
                             <h3>{reviewedAlbum.name}</h3>
                             <h3>{reviewedAlbum.artists[0].name}</h3>
