@@ -6,9 +6,9 @@ const AboutPage = () => {
             <section className="about-divider">
                 <div className="about-section-heading-and-image">
                     <h2>About Hit Record</h2>
-                    <img src={VinylRecord} className="album-artwork"></img>
+                    <img src={VinylRecord} alt="Vinyl record stock image" title="Vinyl record stock image" className="album-artwork"></img>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+                <p>Hit Record is a simple album-reviewing application built with React and powered by Spotify's public API service. This app allows for users to search for albums, view their key data points (such as title and release year), and leave a rating and review. In addition, the app provides extra customization by allowing users to display their four favorite albums on their profile for all to see. Listen, review, and hit record. We'll handle the rest!</p>
             </section>
         </main>
     );
