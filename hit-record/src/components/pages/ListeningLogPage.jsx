@@ -18,6 +18,7 @@ const ListeningLogPage = ({ albumReviews, setExpandedAlbum }) => {
         setExpandedAlbum(album);
         navigate("/home/details");
     };
+    
     return (
         <main>
             <h1><strong>My Listening Log</strong></h1>

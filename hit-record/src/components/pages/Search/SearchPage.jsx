@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
+import SearchBox from "../../common/SearchBox";
 import Card from "../../common/Card";
 import Button from "../../common/Button";
-import { useState } from "react";
-import SearchBox from "../../common/SearchBox";
 
 
 
@@ -28,12 +28,11 @@ const SearchPage = ({ accessToken, setReviewedAlbum }) => {
                 <h1>Search results...</h1>
             }
             <section className="search-results-section">
-
                 {albums.map((album) => {
                     return (
                         <div key={album.id}>
-                            <Card className="album-card">
-                                <img src={album.images[0].url} alt={album.name} className="album-artwork"></img>
+                            <Card className="album-card-no-pointer">
+                                <img src={album.images[0].url} alt={album.name} title={album.name} className="album-artwork"></img>
                                 <h3>{album.name}</h3>
                             </Card>
                             <Button className="add-album-button" onClick={() => handleLogAlbum(album)}> + Log Album
