@@ -38,7 +38,7 @@ function App() {
   const [accessToken, setAccessToken] = useState();
 
   // Favorite Album Array
-  const [favorites, setFavorites] = useState([null, null, null, null])
+  const [favorites, setFavorites] = useState([null, null, null, null]);
 
   useEffect(() => {
     let authCredentials = {

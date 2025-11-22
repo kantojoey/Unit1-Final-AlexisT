@@ -33,6 +33,7 @@ const SearchBox = ({ accessToken, searchInput, setSearchInput, setAlbums }) => {
             console.error("Failed to fetch albums:", error);
         }
     };
+    
     return (
         <section className="album-search-section">
             <input type="text" value={searchInput} className="album-search-box" placeholder="Type album name here..."onChange={(e) => setSearchInput(e.target.value)} />
