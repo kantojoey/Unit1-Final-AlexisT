@@ -1,7 +1,6 @@
 import Button from "./Button";
 
-const SearchBox = ({ accessToken, searchInput, setSearchInput, setAlbums, placeholder="Type album name here..."}) => {
-    // Logic to fetch album data from API
+const SearchBox = ({ accessToken, searchInput, setSearchInput, setAlbums }) => {
     const searchAlbum = async () => {
 
         if(!searchInput.trim()){
@@ -36,7 +35,7 @@ const SearchBox = ({ accessToken, searchInput, setSearchInput, setAlbums, placeh
     };
     return (
         <section className="album-search-section">
-            <input type="text" value={searchInput} className="album-search-box" placeholder={placeholder} onChange={(e) => setSearchInput(e.target.value)} />
+            <input type="text" value={searchInput} className="album-search-box" placeholder="Type album name here..."onChange={(e) => setSearchInput(e.target.value)} />
             <Button className="search-button" onClick={searchAlbum}>
                 🔍
             </Button>

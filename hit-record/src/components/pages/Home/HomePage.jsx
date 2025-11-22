@@ -6,11 +6,12 @@ import VinylRecord from "../../images/VinylRecord.png"
 const HomePage = ({ albumReviews, setExpandedAlbum, favorites }) => {
 
     let navigate = useNavigate();
+
     const albumDetailExpander = (album) => {
         setExpandedAlbum(album);
         navigate("/home/details");
 
-    }
+    };
     return (
         <main>
             <Link to="/profile" style={{ color: "white" }}>
@@ -20,8 +21,8 @@ const HomePage = ({ albumReviews, setExpandedAlbum, favorites }) => {
                 {favorites.map((album, index) => {
                     return (
                         <div key={index}>
-                            <Card className="album-card">
-                                <img src={album ? album.images[0].url : VinylRecord} alt="" className="album-artwork" />
+                            <Card className="album-card-no-pointer">
+                                <img src={album ? album.images[0].url : VinylRecord} alt={album ? album.title : "Vinyl record stock image"}  title={album ? album.title : "Vinyl record stock image"} className="album-artwork" />
                             </Card>
                         </div>
                     )

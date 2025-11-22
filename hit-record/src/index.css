@@ -65,6 +65,11 @@ main {
     cursor: pointer;
 }
 
+.album-card-no-pointer{
+    border: none;
+    cursor: default;
+}
+
 /* To be album sizing styling */
 .album-artwork {
     width: 200px;
