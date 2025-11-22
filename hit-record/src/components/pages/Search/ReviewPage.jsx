@@ -7,7 +7,6 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
 
     let navigate = useNavigate();
 
-    // Logic to set and store album reviews on submit
     const saveAlbumReview = () => {
 
         if (!rating || !reviewText.trim()) {
@@ -37,16 +36,12 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
 
     };
 
-
-    // Handles cancelled album review
     const cancelAlbumReview = () => {
         navigate("/search")
         setRating("");
         setReviewText("");
         setReviewedAlbum(null);
     };
-
-    // Focuses user text input box
 
     const inputRef = useRef(null);
 

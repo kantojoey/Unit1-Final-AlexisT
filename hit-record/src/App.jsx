@@ -41,7 +41,6 @@ function App() {
   const [favorites, setFavorites] = useState([null, null, null, null])
 
   useEffect(() => {
-    // Storing the fetch parameters for readability
     let authCredentials = {
       method: "POST",
       headers: {
@@ -51,7 +50,6 @@ function App() {
         "grant_type=client_credentials&client_id=" + clientID + "&client_secret=" + clientSecret,
     };
 
-    // Fetch returns access token object with 3 key-values: access_token, token_type, and expires_in
     fetch("https://accounts.spotify.com/api/token", authCredentials)
       .then((response) => response.json())
       .then((data) => {
