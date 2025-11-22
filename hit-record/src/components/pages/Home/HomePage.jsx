@@ -15,6 +15,7 @@ const HomePage = ({ albumReviews, setExpandedAlbum, favorites }) => {
     
     return (
         <main>
+            <p><i>Welcome to your music homepage! Let's get listening.</i></p>
             <Link to="/profile" style={{ color: "white" }}>
                 <h1><strong>My Favorites at a glance</strong></h1>
             </Link>
