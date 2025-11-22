@@ -229,4 +229,8 @@ footer {
         text-align: center;
     }
 
+    .button-default-styles {
+        width: 25vw;
+    }
+
 }

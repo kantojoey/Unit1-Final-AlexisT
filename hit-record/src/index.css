@@ -444,4 +444,7 @@ main {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .add-album-button {
+        width: 25vw;
+    }
 }
