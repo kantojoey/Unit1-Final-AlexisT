@@ -9,7 +9,6 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
 
     // Logic to set and store album reviews on submit
     const saveAlbumReview = () => {
-        console.log("rating:", rating, "reviewText:", reviewText, "length:", reviewText.length);
 
         if (!rating || !reviewText.trim()) {
             return;
@@ -86,7 +85,7 @@ const ReviewPage = ({ reviewedAlbum, setReviewedAlbum, setAlbumReviews, rating, 
                                         value={rating}
                                         onChange={(e) => setRating(e.target.value)}
                                         required>
-                                        <option value="" selected disabled>Select a rating</option>
+                                        <option value="" disabled>Select a rating</option>
                                         <option value="★">★</option>
                                         <option value="★★">★★</option>
                                         <option value="★★★">★★★</option>

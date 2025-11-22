@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import Card from "../../common/Card";
 import Button from "../../common/Button";
 import { useState } from "react";
+import SearchBox from "../../common/SearchBox";
 
 
 
@@ -17,52 +18,12 @@ const SearchPage = ({ accessToken, setReviewedAlbum }) => {
     const handleLogAlbum = (album) => {
         setReviewedAlbum(album);
         navigate("/search/review");
-        console.log("Now under review");
     };
-
-    // Logic to fetch album data from API
-    const searchAlbum = async () => {
-        let albumParams = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
-            },
-        };
-
-        try {
-            const response = await fetch(
-                "https://api.spotify.com/v1/search?q=" +
-                searchInput +
-                "&limit=8&type=album",
-                albumParams
-            );
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            console.log(data);
-            setAlbums(data.albums.items);
-        } catch (error) {
-            console.error("Failed to fetch albums:", error);
-        }
-    };
-
-
-    console.log(albums)
-
 
     return (
         <main>
             <h1>Search for an album:</h1>
-            <section className="album-search-section">
-                <input type="text" placeholder="Type album name here..." className="album-search-box" onChange={(e) => setSearchInput(e.target.value)} />
-                <Button className="search-button" onClick={searchAlbum}>
-                    🔍
-                </Button>
-            </section>
+            <SearchBox accessToken={accessToken} searchInput={searchInput} setSearchInput={setSearchInput} albums={albums} setAlbums={setAlbums} />
             {albums.length > 0 &&
                 <h1>Search results...</h1>
             }
