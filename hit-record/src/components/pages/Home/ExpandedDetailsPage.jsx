@@ -18,7 +18,7 @@ const ExpandedDetailsPage = ({ expandedAlbum }) => {
                     </span>
                     <div className="expanded-album-details-page">
                         <Card className="album-card">
-                            <img src={expandedAlbum.image} className="album-artwork" style={{ cursor: "auto" }}></img>
+                            <img src={expandedAlbum.image} alt={expandedAlbum.albumName} title={expandedAlbum.albumName} className="album-artwork" style={{ cursor: "auto" }}></img>
                         </Card>
                         <h2><span className="data-category">Rating:</span> {expandedAlbum.rating}</h2>
                     </div>

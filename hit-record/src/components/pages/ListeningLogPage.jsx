@@ -5,18 +5,19 @@ import Card from "../common/Card";
 const ListeningLogPage = ({ albumReviews, setExpandedAlbum }) => {
 
     const calculateAvg = (reviews) => {
+
         let sum = reviews.reduce((accumulator, reviews) => accumulator + reviews.rating.length, 0);
 
         let avg = (sum / reviews.length).toFixed(1);
         return avg;
-    }
+    };
 
     let navigate = useNavigate();
+
     const albumDetailExpander = (album) => {
         setExpandedAlbum(album);
         navigate("/home/details");
-
-    }
+    };
 
     return (
         <main>
@@ -34,7 +35,7 @@ const ListeningLogPage = ({ albumReviews, setExpandedAlbum }) => {
                 {albumReviews && albumReviews.length > 0 ? (albumReviews.map((album) => {
                     return (
                         <Card className="album-card" onClick={() => albumDetailExpander(album)}>
-                            <img src={album.image} className="album-artwork"></img>
+                            <img src={album.image} alt={album.albumName} title={album.albumName} className="album-artwork"></img>
                         </Card>
                     )
                 })) :
