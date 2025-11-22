@@ -6,7 +6,6 @@ const LoadingPage = () => {
     let navigate = useNavigate();
     const handleClick = () => {
         navigate("/home")
-        console.log("Just hold on, we're going home");
 
     };
     return (

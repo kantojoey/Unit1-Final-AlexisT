@@ -60,8 +60,6 @@ function App() {
       );
   }, []);
 
-  console.log(accessToken);
-
   return (
     <div id="body-container">
       <Header />
