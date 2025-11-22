@@ -6,7 +6,7 @@ const LoadingPage = () => {
 
     let navigate = useNavigate();
     const handleClick = () => {
-        navigate("/home")
+        navigate("/home");
 
     };
     

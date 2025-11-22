@@ -36,7 +36,6 @@ const ProfilePage = ({ albumReviews, favorites, setFavorites, accessToken }) => 
         let newFavorites = [...favorites];
         newFavorites[favorite] = null;
         setFavorites(newFavorites);
-
     };
 
     return (

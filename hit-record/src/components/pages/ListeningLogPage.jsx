@@ -18,19 +18,27 @@ const ListeningLogPage = ({ albumReviews, setExpandedAlbum }) => {
         setExpandedAlbum(album);
         navigate("/home/details");
     };
-    
+
     return (
         <main>
             <h1><strong>My Listening Log</strong></h1>
-            <section id="user-stats-log-section">
-                <Card className="listening-stat-card">
-                    <h2>{albumReviews.length === 1 ? (`${albumReviews.length} review`) : (`${albumReviews.length} reviews`)}</h2>
-                </Card>
-                <Card className="listening-stat-card">
-                    <h2>{albumReviews.length === 0 ? ("No average to display yet") : (`${calculateAvg(albumReviews)} average rating`)}
-                    </h2>
-                </Card>
-            </section>
+            <table className="listening-stats-table">
+                <tbody>
+                    <tr>
+                        <th>Total Reviews</th>
+                        <td>
+                            {albumReviews.length === 1 ? ("1 review") : (`${albumReviews.length} reviews`)}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Average Rating</th>
+                        <td>
+                            {albumReviews.length === 0 ? ("No average yet"): (`${calculateAvg(albumReviews)} stars`)}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
             <AlbumShelf>
                 {albumReviews && albumReviews.length > 0 ? (albumReviews.map((album) => {
                     return (
